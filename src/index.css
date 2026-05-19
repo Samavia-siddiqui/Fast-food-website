@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #020617;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(236, 72, 153, 0.14), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.16), transparent 20%),
+    #020617;
+}
+
+::selection {
+  background: rgba(234, 179, 8, 0.35);
+}
+
+.bg-card {
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.menu-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px) rotateZ(-1deg) scale(1.02);
+  box-shadow: 0 32px 90px rgba(7, 11, 30, 0.28);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+}
+
+.card-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 58%);
+  pointer-events: none;
+  transform: translateZ(1px);
+}
+
+@media (min-width: 768px) {
+  .hero-card {
+    transform: perspective(1200px) rotateX(6deg) rotateY(-12deg);
+  }
+}
